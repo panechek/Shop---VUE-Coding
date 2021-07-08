@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.center {
+  max-width: 1140px;
+  padding: 0 2%;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #222222;
+}
+
+.header-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__logo {
+  display: block;
+}
+
+.header__search {
+  border: none;
+  background: none;
+}
+
+.header-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-right a {
+  padding: 20px;
+}
+
+.logo {
+  height: 44px;
+  width: 38px;
+  padding: 19px 19px 19px 0;
+}
+
+.fas {
+  color: #E8E8E8;
+  padding: 20px;
+}
+
+#switcher {
+  visibility: hidden;
+}
+
+.header__nav {
+  position: relative;
+}
+
+.nav-box {
+  position: absolute;
+  display: none;
+  background-color: #FFFFFF;
+  padding: 24px;
+  width: 232px;
+}
+
+#switcher:checked ~ .nav-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 1;
+  -webkit-transition: 4s;
+  transition: 4s;
+}
+
+.banner {
+  height: 148px;
+  background: #F8F3F4;
+}
+
+.goods-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 51px;
+}
+
+.goods-item {
+  background: #F8F8F8;
+  width: 32%;
+  margin-bottom: 30px;
+}
+
+.goods-item img {
+  width: 100%;
+}
+
+.item-text {
+  padding: 20px;
+}
+
+.item-name {
+  font-size: 13px;
+  line-height: 16px;
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.item-description {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #5D5D5D;
+  margin-bottom: 18px;
+}
+
+.item-price {
+  font-family: Lato;
+  font-size: 16px;
+  line-height: 19px;
+  color: #F16D7F;
+}
+/*# sourceMappingURL=style.css.map */
