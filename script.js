@@ -1,6 +1,7 @@
 
 class item {
-    constructor(title, price, img, description) {
+    constructor({id_product:id, title, price, img, description}) {
+        this._id = id;
         this._title = title;
         this._price = price;
         this._img = img;
@@ -42,9 +43,13 @@ class ItemInCart extends item {
 }
 
 class ItemList {
-    constructor (items, container) {
-        this._items = items;
+    constructor (container) {
+        this._items = [];
         this._$itemsListContainer = container
+    }
+
+    add(item) {
+        this._items.push(item);
     }
 
     renderItemsList() {
@@ -57,8 +62,8 @@ class ItemList {
 }
 
 class ItemListCart  {
-    constructor (items, container,summ=0) {
-        this._items = items;
+    constructor (container,summ=0) {
+        this._items = [];
         this._$itemsListContainer = container;
         this._summ = summ;
     }
@@ -78,17 +83,23 @@ class ItemListCart  {
     
 }
 
-const list = new ItemList([
-new item("ELLERY X M'O CAPSULE", "$52.00", "img/item1.jpg", "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi."),
-new item("ELLERY X M'O CAPSULE","$52.00","img/item2.jpg", "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi."),
-new item("ELLERY X M'O CAPSULE","$52.00","img/item3.jpg", "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi."),
-new item("ELLERY X M'O CAPSULE","$52.00","img/item4.jpg", "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi."),
-new item("ELLERY X M'O CAPSULE","$52.00","img/item5.jpg", "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi."),
- new item("ELLERY X M'O CAPSULE","$52.00","img/item6.jpg", "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi."),
-new item("ELLERY X M'O CAPSULE","$52.00","img/item7.jpg", "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi."),
-new item("ELLERY X M'O CAPSULE","$52.00","img/item8.jpg", "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi."),
-new item("ELLERY X M'O CAPSULE","$52.00","img/item9.jpg", "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi."),
-], document.querySelector('.goods-list'))
+const list = new ItemList(document.querySelector('.goods-list'))
+
+fetch('catalog.json')
+    .then((response) => {
+        return response.json()
+    })
+    .then( (response) => {
+        response.forEach(newItem => {
+            list.add(new item(newItem));
+        });
+        console.log(list);
+        list.renderItemsList();
+    })
+    .catch( (err) => {
+        console.log(err)
+    })
+
 
 // list.renderItemsList();
 
