@@ -8,6 +8,7 @@ function testEmail(a){
         renderFalse();
 }
 }
+
 const sendMail = document.querySelector(".subscribe_input");
 const sendMailBtn = document.querySelector(".subscribe_btn");
 sendMailBtn.addEventListener('click',()=>{
