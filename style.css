@@ -103,6 +103,17 @@ a {
   background: #F8F3F4;
 }
 
+.banner-center {
+  height: 100%;
+  background-image: url(img/banner-bg.png);
+  background-repeat: no-repeat;
+  background-position-x: -150px;
+}
+
+.banner-main {
+  height: 764px;
+}
+
 .goods-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -150,6 +161,38 @@ a {
   font-size: 16px;
   line-height: 19px;
   color: #F16D7F;
+}
+
+.feature {
+  height: 341px;
+  background: #222224;
+}
+
+.feature-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.feature-item {
+  width: 31%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.feature-text {
+  text-align: center;
 }
 
 .communication {
