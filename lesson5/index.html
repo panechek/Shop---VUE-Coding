@@ -16,7 +16,7 @@
             <input type="text" class="goods-search" v-model="searchLine" />
             <button v-on:click="filtred" class="search-button" type="button">Искать</button>
             <button v-on:click="see" class="cart-button">Корзина</button>
-            <template v-if:="isVisibleCart">
+            <template v-if="isVisibleCart">
                 <div class="cart">
                     <div class="cart-item" v-for="item in cart">
                         <h1>{{ item.title }}</h1>
