@@ -1,7 +1,7 @@
-const searchTemp = `<div class="search"><button v-on:click="seeSearch"  class="header__search">
+const searchTemp = `<div><button  class="header__search">
 <img src="img/search.png" alt="search"></button>
-       <template v-if="isVisibleSearch"><input type="text" class="goods-search">
-       <button class="search-button" type="button">Искать</button></template></div>`
+       <input type="text" class="goods-search">
+       <button class="search-button" type="button">Искать</button></div>`
 
 
 Vue.component('search-comp', {

@@ -41,8 +41,7 @@ const headerTemp = `<header class="header">
 
         </div>
         <a href="registration.html" class="header__acc"><img src="img/acc.png" alt="acc"></i></a>
-        <a style="padding-right: 0;" href="cart.html" class="header__cart"><img src="img/cart.svg"
-                alt="cart"></a>
+        <cart-comp></cart-comp>
     </div>
 </div>
 
