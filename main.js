@@ -1,16 +1,39 @@
-function renderFalse(){
-    alert("Вы ввели неправильный адрес");
-    // document.querySelector('.falseEmail').insertAdjacentHTML("beforeend","<p> Неправильный email</p>")
-}
-function testEmail(a){
-    const redEx = /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/;
-    if (!redEx.test(a)){
-        renderFalse();
-}
-}
+ const vue = new Vue({
+     el: "#app",
+     data: {
+         goods: [],
+         filteredGoods: [],
+         searchLine: '',
+         newTitle: '',
+         newPrice: 0,
+         cart: [],
+         id: '',
+     },
 
-const sendMail = document.querySelector(".subscribe_input");
-const sendMailBtn = document.querySelector(".subscribe_btn");
-sendMailBtn.addEventListener('click',()=>{
-        testEmail(sendMail.value)
-})
+     methods: {
+
+         filtred() {
+             const regex = new RegExp(this.searchLine);
+             this.filteredGoods = this.goods.filter((good) => regex.test(good.title))
+         },
+
+         addToCart(e) {
+             this.cart.push(this.goods[e.target.id - 101]);
+             console.log(this.cart)
+         },
+
+
+
+
+     },
+
+     mounted() {
+         fetch('catalog.json')
+             .then((response) => response.json())
+             .then((response) => this.goods = response)
+             .then((response) => this.filteredGoods = response)
+     }
+
+
+
+ });
