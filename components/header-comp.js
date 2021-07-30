@@ -40,7 +40,7 @@ const headerTemp = `<header class="header">
 
         </div>
         <a href="registration.html" class="header__acc"><img src="img/acc.png" alt="acc"></i></a>
-        <cart-comp></cart-comp>
+        <cart-comp v-bind:cart="cart"></cart-comp>
     </div>
 </div>
 
@@ -48,6 +48,7 @@ const headerTemp = `<header class="header">
 
 Vue.component('header-comp', {
     template: headerTemp,
+    props: ['cart'],
     methods: {
         filtred(searchText) {
             this.$emit('filtred', searchText);

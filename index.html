@@ -17,10 +17,10 @@
 
 <body>
     <div id="app">
-        <header-comp v-on:filtred="filtred"></header-comp>
+        <header-comp v-on:filtred="filtred" v-bind:cart="cart"></header-comp>
         <banner-comp></banner-comp>
         <offer-comp></offer-comp>
-        <product-comp v-bind:goods="filteredGoods"></product-comp>
+        <product-comp v-bind:goods="filteredGoods" v-on:add="addHandler"></product-comp>
         <feature-comp></feature-comp>
         <subscribe-comp></subscribe-comp>
         <footer-comp></footer-comp>

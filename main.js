@@ -3,9 +3,8 @@
      data: {
          goods: [],
          filteredGoods: [],
-         searchLine: '',
-         newTitle: '',
-         newPrice: 0,
+
+
          cart: [],
          id: '',
 
@@ -20,10 +19,12 @@
              console.log(this.filteredGoods)
          },
 
-         addToCart(e) {
-             this.cart.push(this.goods[e.target.id - 101]);
+         addHandler(id) {
+             const good = this.goods.find(good => good.id === id)
+             this.cart.push(good);
+
              console.log(this.cart)
-         },
+         }
 
 
 
