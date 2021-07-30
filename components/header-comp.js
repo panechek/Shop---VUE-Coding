@@ -2,8 +2,7 @@ const headerTemp = `<header class="header">
 <div class="center header-flex">
     <div class="header-left">
         <a href="index.html" class="header__logo"><img class="logo" src="img/logo.svg" alt="logo"></a>
-        
-        <search-comp></search-comp>
+        <search-comp v-on:filtred="filtred"></search-comp>
     </div>
     <div class="header-right">
         <div class="header__nav">
@@ -49,6 +48,12 @@ const headerTemp = `<header class="header">
 
 Vue.component('header-comp', {
     template: headerTemp,
+    methods: {
+        filtred(searchText) {
+            this.$emit('filtred', searchText);
+            console.log(searchText)
+        }
+    }
 
 
 })
