@@ -4,7 +4,7 @@ const productTemp = `<section class="product">
         <p class="product-title">Fetured Items</p>
         <p class="product-title-text">Shop for items based on what we featured in this week</p>
         <div class="goods-list">
-        <item-comp v-for="good of goods" v-bind:good="good"></item-comp>
+        <item-comp v-for="good of goods" v-bind:good="good" v-on:add="addHandler"></item-comp>
         </div>
         <a href="product.html" class="product-button">Browse All Product</a>
     </div>
@@ -13,7 +13,12 @@ const productTemp = `<section class="product">
 
 Vue.component('product-comp', {
         template: productTemp,
-        props: ['goods']
+        props: ['goods'],
+        methods: {
+            addHandler(id) {
+                this.$emit('add', id)
+            }
+        }
     }
 
 )
