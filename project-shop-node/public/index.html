@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="app">
+        <header-comp v-on:filtred="filtred" v-bind:cart="cart"></header-comp>
+        <banner-comp></banner-comp>
+        <offer-comp></offer-comp>
+        <product-comp v-bind:goods="filteredGoods" v-on:add="addHandler"></product-comp>
+        <feature-comp></feature-comp>
+        <subscribe-comp></subscribe-comp>
+        <footer-comp></footer-comp>
+    </div>
+    <script src=" https://cdn.jsdelivr.net/npm/vue@2"> </script>
+    <script src="components/header-comp.js"></script>
+    <script src="components/search-comp.js"></script>
+    <script src="components/cart-comp.js"></script>
+    <script src="components/banner-comp.js"></script>
+    <script src="components/offer-comp.js"></script>
+    <script src="components/product-comp.js"></script>
+    <script src="components/item-comp.js"></script>
+    <script src="components/feature-comp.js"></script>
+    <script src="components/subscribe-comp.js"></script>
+    <script src="components/footer-comp.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
