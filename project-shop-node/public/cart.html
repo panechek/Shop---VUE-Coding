@@ -136,6 +136,7 @@
 
     <div id="app">
         <header-comp v-on:filtred="filtred" v-bind:cart="cart"></header-comp>
+        <bannernav-comp></bannernav-comp>
         <cartproduct-comp v-bind:goods="cart" v-on:delete="deleteHandler"></cartproduct-comp>
         <feature-comp></feature-comp>
         <subscribe-comp></subscribe-comp>
@@ -144,6 +145,7 @@
     <script src=" https://cdn.jsdelivr.net/npm/vue@2"> </script>
     <script src="components/header-comp.js"></script>
     <script src="components/search-comp.js"></script>
+    <script src="components/bannernav-comp.js"></script>
     <script src="components/cart-comp.js"></script>
     <script src="components/cartProduct-comp.js"></script>
     <script src="components/cartItem-comp.js"></script>

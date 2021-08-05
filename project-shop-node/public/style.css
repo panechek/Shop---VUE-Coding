@@ -655,4 +655,53 @@ footer {
 .url i:hover {
   color: #f16d7f;
 }
+
+.cart {
+  margin-top: 96px;
+}
+
+.cart-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cart-list {
+  width: 57%;
+}
+
+.cart-list-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cart-form {
+  width: 31px;
+}
+
+.cart-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-bottom: 40px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cart-item-img {
+  height: 306px;
+}
+
+.cart-item-info {
+  padding: 22px 31px;
+}
 /*# sourceMappingURL=style.css.map */

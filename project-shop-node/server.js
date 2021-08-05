@@ -50,14 +50,14 @@ app.delete('/cart', jsonParser, (req, res) => {
         req.body
         const good = cart.find(good => good.id_product === req.body.id_product)
 
-        good.count = --good.count;
+        // good.count = --good.count;
 
-        if (good.count == 0) {
-            const removeIndex = cart.map(function (item) {
-                return item.id_product;
-            }).indexOf(good.id_product);
-            cart.splice(removeIndex, 1);
-        }
+
+        const removeIndex = cart.map(function (item) {
+            return item.id_product;
+        }).indexOf(good.id_product);
+        cart.splice(removeIndex, 1);
+
 
         fs.writeFile('./data/cart.json', JSON.stringify(cart), () => {
             res.end();
