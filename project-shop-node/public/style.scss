@@ -543,3 +543,40 @@ footer {
 .url i:hover {
     color: #f16d7f;
 }
+
+.cart {
+    margin-top: 96px;
+
+    &-flex {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-list {
+        width: 57%;
+
+        &-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &-form {
+        width: 31px;
+    }
+
+    &-item {
+        display: flex;
+        width: 100%;
+        margin-bottom: 40px;
+        justify-content: space-between;
+
+        &-img {
+            height: 306px;
+        }
+
+        &-info {
+            padding: 22px 31px;
+        }
+    }
+}

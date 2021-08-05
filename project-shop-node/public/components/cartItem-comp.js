@@ -1,5 +1,17 @@
-const cartItemTemp = `<div class="goods-item"><a href="product.html" class="item"><img :src="good.img" class="item-img"><div class="item-text"><p class="item-name">{{good.title}}</p><p class="item-description">{{good.description}}</p><p class="item-price">{{good.price}}</p></div></a><div class="box-add">
-<button v-on:click="deleteHandler" class="add" href="#"><img class="add-img" src="img/cart_add.svg" alt="cart-img">Add to cart</button>
+const cartItemTemp = `<div class="cart-item">
+<a href="product.html">
+<img :src="good.img" class="cart-item-img">
+</a>
+<div class="cart-item-info">
+<p class="cart-item-name">{{good.title}}</p>
+<p class="cart-item-text">Price:<span class="cart-item-pink"> {{good.price}}</span></p>
+<p class="cart-item-text">Color: Red</p>
+<p class="cart-item-text">Size: Xl	</p>
+<p class="cart-item-text">Quantity:	<span class="cart-item-count"> {{good.count}}</span></p>
+</div>
+
+<div class="cart-item-delete">
+<button v-on:click="deleteHandler" class="cart-delete" href="#">x</button>
 </div></div>`
 
 Vue.component('cartitem-comp', {

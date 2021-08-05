@@ -1,13 +1,15 @@
-const cartProductTemp = `<section class="product">
+const cartProductTemp = `<section class="cart">
 <div class="center">
-    <div class="product-flex">
-        <p class="product-title">Fetured Items</p>
-        <p class="product-title-text">Shop for items based on what we featured in this week</p>
-        <div class="goods-list">
+    <div class="cart-flex">
+        <div class="cart-list">
         <cartitem-comp v-for="good of goods" v-bind:good="good" v-on:delete="deleteHandler"></cartitem-comp>
+        <div class="cart-list-buttons>
+            <a href="product.html" class="product-button">CLEAR SHOPPING CART</a>
+            <a href="product.html" class="product-button">CONTINUE SHOPPING</a>
         </div>
-        <a href="product.html" class="product-button">Browse All Product</a>
+        </div>
     </div>
+    <div class="cart-form"></div>
 </div>
 </section>`
 

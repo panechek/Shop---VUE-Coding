@@ -7,7 +7,7 @@
 
 
              cart: [],
-             id: '',
+
 
          }
      },
@@ -22,7 +22,7 @@
 
          addHandler(id_product) {
              const good = this.goods.find(good => good.id_product === id_product)
-             //  this.cart.push(good);
+
              fetch('/cart', {
                  method: 'POST',
                  headers: {
