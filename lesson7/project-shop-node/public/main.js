@@ -7,7 +7,7 @@
 
 
              cart: [],
-
+             count: 0
 
          }
      },
@@ -22,7 +22,7 @@
 
          addHandler(id_product) {
              const good = this.goods.find(good => good.id_product === id_product)
-
+             this.cart.push(good)
              fetch('/cart', {
                  method: 'POST',
                  headers: {
@@ -38,30 +38,35 @@
          },
          deleteHandler(id_product) {
              const good = this.goods.find(good => good.id_product === id_product)
+             this.cart.splice(this.cart.findIndex(good => good.id_product === id_product), 1)
 
-             const removeIndex = this.cart.map(function (item) {
-                 return item.id;
-             }).indexOf(id_product);
-             this.cart.splice(removeIndex, 1);
+             fetch('/cart', {
+                 method: 'PUT',
+                 headers: {
+                     "Content-Type": "application/json"
+                 },
+                 body: JSON.stringify(good),
+
+
+             })
+
+
+         },
+
+         clear() {
+             this.cart.splice(0, (this.cart.length + 1))
+
              fetch('/cart', {
                  method: 'DELETE',
                  headers: {
                      "Content-Type": "application/json"
                  },
-                 body: JSON.stringify(good)
+
+
+
              })
-             fetch('/cart')
-                 .then((response) => response.json())
-                 .then((response) => this.cart = response)
-
-
-             console.log(this.cart)
 
          }
-
-
-
-
 
 
      },
@@ -79,4 +84,4 @@
 
 
 
- });
+ })
