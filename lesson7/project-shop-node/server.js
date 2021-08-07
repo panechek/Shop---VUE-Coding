@@ -26,7 +26,7 @@ app.post('/cart', jsonParser, (req, res) => {
         const cart = JSON.parse(text);
 
         console.log(req.body)
-        req.body
+
         const good = cart.find(good => good.id_product === req.body.id_product)
         if (good == undefined) {
             req.body.count = 1;
@@ -42,24 +42,29 @@ app.post('/cart', jsonParser, (req, res) => {
     });
 })
 
+app.put('/cart', jsonParser, (req, res) => {
+    fs.readFile('./data/cart.json', 'utf8', (err, text) => {
+        const cart = JSON.parse(text);
+
+        console.log(req.body);
+
+        const good = cart.find(good => good.id_product === req.body.id_product);
+        cart.splice(cart.findIndex(good => good.id_product === req.body.id_product), 1)
+
+        fs.writeFile('./data/cart.json', JSON.stringify(cart), () => {
+
+            res.end();
+        })
+    });
+})
+
 app.delete('/cart', jsonParser, (req, res) => {
     fs.readFile('./data/cart.json', 'utf8', (err, text) => {
         const cart = JSON.parse(text);
 
-        console.log(req.body)
-        req.body
-        const good = cart.find(good => good.id_product === req.body.id_product)
-
-        // good.count = --good.count;
-
-
-        const removeIndex = cart.map(function (item) {
-            return item.id_product;
-        }).indexOf(good.id_product);
-        cart.splice(removeIndex, 1);
-
-
+        cart.splice(0, cart.length + 1);
         fs.writeFile('./data/cart.json', JSON.stringify(cart), () => {
+
             res.end();
         })
     });

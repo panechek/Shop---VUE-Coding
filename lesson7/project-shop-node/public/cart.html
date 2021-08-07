@@ -137,7 +137,8 @@
     <div id="app">
         <header-comp v-on:filtred="filtred" v-bind:cart="cart"></header-comp>
         <bannernav-comp></bannernav-comp>
-        <cartproduct-comp v-bind:goods="cart" v-on:delete="deleteHandler"></cartproduct-comp>
+        <cartproduct-comp v-bind:goods="cart" v-on:delete="deleteHandler" v-on:clear="clear">
+        </cartproduct-comp>
         <feature-comp></feature-comp>
         <subscribe-comp></subscribe-comp>
         <footer-comp></footer-comp>
